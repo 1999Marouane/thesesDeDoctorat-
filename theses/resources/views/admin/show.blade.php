@@ -5,10 +5,10 @@
     <h2>Admin - Thesis Details</h2>
 
     <div>
-        <strong>Title:</strong> {{ $thesis->title }}
+        <strong>Title:</strong> {{ $theses->title }}
     </div>
     <div>
-        <strong>Author:</strong> {{ $thesis->author }}
+        <strong>Author:</strong> {{ $theses->author }}
     </div>
     <!-- Display other thesis details as needed -->
 

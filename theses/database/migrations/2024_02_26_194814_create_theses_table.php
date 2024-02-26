@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('abstract');
             $table->text('jury_members');
             $table->integer('year_of_defense');
-            $table->string('research_domain');
+            $table->text('research_domain');
             $table->timestamps();
         });
     }

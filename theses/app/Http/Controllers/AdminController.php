@@ -37,15 +37,21 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|max:255',
-            // Add other fields validation as needed
-        ]);
-
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'author' => 'required|string|max:255',
+        //     // Add other fields validation as needed
+        // ]);
+            
         Theses::create([
             'title' => $request->title,
             'author' => $request->author,
+            'abstract'=>$request->abstract,
+            'jury_members'=>$request->jury_members,
+            'year_of_defense'=>$request->year_of_defense,
+            'research_domain'=>$request->research_domain,
+
+
             // Assign other fields as needed
         ]);
 
@@ -87,16 +93,19 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|max:255',
-            // Add other fields validation as needed
-        ]);
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'author' => 'required|string|max:255',
+        //     // Add other fields validation as needed
+        // ]);
 
         $theses = Theses::findOrFail($id);
         $theses->update([
             'title' => $request->title,
             'author' => $request->author,
+            'abstract'=>$request->abstract,
+            'jury_members'=>$request->jury_members,
+            'year_of_defense'=>$request->year_of_defense,
             // Update other fields as needed
         ]);
 
